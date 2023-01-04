@@ -1,0 +1,15 @@
+calc_hipotenusa:
+  score: 25
+  test:  test/main_test.py::test_calc_hipotenusa
+
+calc_area_comprimento_circulo:
+  score: 25
+  test:  test/main_test.py::test_calc_area_comprimento_circulo
+
+calc_imc:
+  score: 25
+  test:  test/main_test.py::test_calc_imc
+
+calc_distancia_2pontos:
+  score: 25
+  test:  test/main_test.py::test_calc_distancia_2pontos
