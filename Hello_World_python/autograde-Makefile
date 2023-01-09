@@ -3,6 +3,5 @@ all:
 	cp main.py autograde
 	(cd autograde; python3 driver.py problems.yml)
 
-
 clean:
-	rm -rf *~ autograde
+	rm -rf *~ lab00-autograde

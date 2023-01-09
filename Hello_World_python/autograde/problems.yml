@@ -1,0 +1,7 @@
+problem1:
+  score: 50
+  test:  test/test_main.py::test_hello_world
+
+problem2:
+  score: 50
+  test:  test/test_main.py::test_hello_python

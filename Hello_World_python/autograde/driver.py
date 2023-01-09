@@ -4,34 +4,23 @@ import json
 import pytest
 import yaml
 
-# os resultados por padrão são "não concluido"
-results = [False, False, False, False]
+results = [False,False]
 
-
-def formatted_feedback(p1, p2, p3, p4):
+def formatted_feedback(p1,p2):
     formatted_feedback = {
         "_presentation": "semantic",
         "stages": ["Test Results"],
-        "Test Results":
-            {
-                "calc_hipotenusa": {
-                    "passed": p1,
-                    "hint": "https://www.todamateria.com.br/hipotenusa-como-calcular-sua-medida/#:~:text=O%20c%C3%A1lculo%20da%20hipotenusa%20%C3%A9,soma%20dos%20catetos%20ao%20quadrado%E2%80%9D."
-                },
-                "calc_area_comprimento_circulo": {
-                    "passed": p2,
-                    "hint": "https://brasilescola.uol.com.br/matematica/comprimento-area-circunferencia.htm"
-                },
-                "calc_imc": {
-                    "passed": p3,
-                    "hint": "https://centrodeobesidadeediabetes.org.br/tudo-sobre-obesidade/calculadora-de-imc/#:~:text=O%20IMC%20%C3%A9%20reconhecido%20como,ao%20quadrado%20(em%20metros)."
-                },
-                "calc_distancia_2pontos": {
-                    "passed": p4,
-                    "hint": "https://mundoeducacao.uol.com.br/matematica/distancia-entre-dois-pontos.htm#:~:text=Dados%20os%20pontos%20A(x,B%20%E2%80%93%20yA)%C2%B2."
-                }
+        "Test Results": 
+        {
+            "Problem1": {
+                "passed": p1,
+                "hint" : "Verifica a escrita"
             },
-        #"Output": 'only instructor'
+            "Problem2": {
+                "passed": p2,
+                "hint": "falta colocar mais empenho"
+            }
+        }
     }
 
     print(json.dumps(formatted_feedback))
@@ -43,7 +32,7 @@ def score_assignment(problems):
 
     student_eval = {
         'scores': {}
-    }
+    } 
 
     for p in problems:
         name = p
@@ -75,6 +64,7 @@ if __name__ == "__main__":
     with open(sys.argv[1], 'r') as stream:
         problems = yaml.load(stream)
         student_eval = score_assignment(problems)
-
-        formatted_feedback(results[0], results[1], results[2], results[3])
+        
+        print(results)
+        formatted_feedback(results[0],results[1])
         print(json.dumps(student_eval))  # required to autograde

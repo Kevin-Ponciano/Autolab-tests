@@ -1,0 +1,6 @@
+get_name:
+  score: 5
+  test:  test/test_main.py::test_get_name
+get_age:
+  score: 5
+  test:  test/test_main.py::test_get_age
