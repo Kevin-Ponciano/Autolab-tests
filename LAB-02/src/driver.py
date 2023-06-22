@@ -47,7 +47,7 @@ def is_passed(score):
 def formatted_feedback(score1, score2, score3, score4):
     json_output = {
         "_presentation": "semantic",
-        "Output": "only instructor",
+        #"Output": "only instructor",
         "stages": ["Test Cards", "Test Invalid Inputs"],
         "Test Cards": {
             "AMEX": {
